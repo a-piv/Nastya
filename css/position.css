@@ -1,0 +1,178 @@
+.positionCard_list{
+display: flex;
+flex-wrap:wrap;
+list-style-type: none;
+margin: 0;
+padding: 0;
+
+}
+
+.positionCard{
+width: 10%;
+margin: 10px 10px;
+}
+
+
+
+.positionCard_NEW{
+  margin-top: -25px;
+  margin-left: 8px;
+  color: #22af22;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #f00;
+}
+
+.positionCard_brand{
+  font-weight: bold;
+  color: #000;
+}
+
+
+/* .positionCard_name{} */
+
+.positionCard_priceU{
+  font-weight: bold;
+}
+
+.positionCard_priceU::after {
+  content: " руб.";
+}
+
+
+/* .positionCard_rating{} */
+
+.searchRequestNone{
+  display: none;
+}
+
+
+/* Новые  */
+.positionCategoryRow{
+  display: flex;
+}
+
+.positionCategoryСolumn{
+  flex-wrap: wrap;
+  margin: 0 10px;
+}
+
+.positionAllArticlesForm{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.positionArticleField{
+  margin: 3px;
+}
+
+
+.positionArticleOne{
+  width: 90px;
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.allSearchRequetForm{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .positionArticleNew{
+  width: 100%;
+} */
+
+
+
+/* ----------- "Акции" в позициях -----------*/
+.allActions{
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 20px);
+}
+.oneAction{
+  width: 23%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 5px;
+}
+  /* .imageAction{} */
+  .imageActionPromo{
+    width: 100%;
+  }
+  /* .promoTextAction{}
+  .altAction{}
+  .startDateAction{}
+  .isPayAction{}
+  .countryBitmaskAction{} */
+
+  .actionPayTrue{
+    background-color: mediumpurple;
+  }
+  .actionPayFalse{
+    background-color: grey;
+  }
+  .actionPayBrands{
+    position: absolute;
+    font-size: 3rem;
+    margin-top: -10%;
+    margin-left: 5%;
+    transform: rotate(-45deg);
+    opacity: 0.5;
+    color: orangered;
+    text-shadow: 2px 2px 3px black, 0 0 1em red
+  }
+  /* ----------- ----------- ----------- -----------*/
+
+
+  table.positionResultTable {
+    border: 1px solid #1C6EA4;
+    background-color: #EEEEEE;
+    /* width: 100%; */
+    text-align: left;
+    border-collapse: collapse;
+  }
+
+  
+
+  table.positionResultTable td, table.positionResultTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+    max-width: 80px;
+  }
+
+  
+  table.positionResultTable td:first-child, table.positionResultTable th:first-child {
+    width: 400px;
+  }
+
+
+  table.positionResultTable tbody td {
+    font-size: 13px;
+    text-align: center;
+  }
+  table.positionResultTable tbody td:first-child {
+    text-align: left;
+  }
+
+  table.positionResultTable tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.positionResultTable thead {
+    background: #1C6EA4;
+    background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  }
+  table.positionResultTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-left: 2px solid #D0E4F5;
+    max-height: 100px;
+    overflow: hidden;
+  }
+  table.positionResultTable thead th:first-child {
+    border-left: none;
+  }
+  

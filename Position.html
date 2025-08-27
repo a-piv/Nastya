@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+nav {
+  display: table;
+  /* margin: 0 auto; */
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topmenu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.topmenu > li {
+  /* width: 25%; */
+  float: left;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+.topmenu > li > a {
+  /* text-transform: uppercase; */
+  font-size: 14px;
+  font-weight: bold;
+  color: #404040;
+  padding: 15px 30px;
+}
+.topmenu li a:hover { color: #D5B45B; }
+.submenu-link:after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  color: inherit;
+  margin-left: 10px;
+}
+.submenu {
+  background: #273037;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 5;
+  width: 180px;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: .5s ease-in-out;
+}
+.submenu a {
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.submenu li:last-child a { border-bottom: none; }
+.topmenu > li:hover .submenu {
+  opacity: 1;
+  transform: scaleY(1);
+}
+    </style>
+
+</head>
+<body>
+    <div>
+        <form name="formSelected"  method="POST">
+            <label>
+              Поисковый зпрос:
+              <input
+                type="text"
+                name="nameQuery"
+                id="SearchQuery"
+                value="айфон 13 128"
+                required
+                autofocus
+              >
+            </label>
+            <label>
+              Фильтр Цена:
+              <select name="filterPoular" required>
+                <option value="popular">По популярности</option>
+                <option value="rate">По рейтингу</option>
+                <option value="priceup" selected>По возрастанию цены</option>
+                <option value="pricedown">По убыванию цены</option>
+                <option value="newly">По новинкам</option>
+                <option value="benefit">Сначала выгодные</option>
+              </select>
+            </label>
+            <label>
+                Фильтр Цвет:
+                <select name="filterColor">
+                  <option value="13600062">Черный</option>
+                  <option value="20214644">Бежевый</option>
+                  <option value="12065905">Белый</option>
+                  <option value="20214449">Голубой</option>
+                  <option value="14185777">Желтый</option>
+                  <option value="14835931">Зелёный</option>
+                  <option value="11807341">Красный</option>
+                  <option value="11807342">Розовый</option>
+                  <option value="20214430">Серый</option>
+                  <option value="20214646">Синий</option>
+                  <option value="14185662">Фиолетовый</option>
+                </select>
+              </label>
+            <label>
+                Фильтр Модель:
+                <select name="filterModel" required class="&f5023">
+                  <option value="5866733" selected>iPhone 13</option>
+                  <option value="5866955">iPhone 13 Pro</option>
+                  <option value="5867400">iPhone 13 Max</option>
+                  <option value="5868827">iPhone 13 Mini</option>
+                  <option value="61513416">iPhone 14</option>
+                  <option value="61513418">iPhone 14 Pro</option>
+                  <option value="63321888">iPhone 14 Plus</option>
+                  <option value="61513419">iPhone 14 Pro Max</option>
+                  <option value="770965474">iPhone 15</option>
+                  <option value="770965474">iPhone 15</option>
+                  <option value="770965474">iPhone 15</option>
+                  <option value="786139550">iPhone 15 Pro</option>
+                  <option value="84424644">iPhone 15 Pro Max</option>
+                  <option value="791556425">iPhone 15 Plus</option>
+                </select>
+
+              </label>
+                   <label>
+                Фильтр Встроенная память:
+                <select name="filterMemory" required>
+                  <option value="12868" selected>128</option>
+                  <option value="25425">256</option>
+                  <option value="117419">512</option>
+
+
+
+                  
+                </select>
+              </label>
+            <button type="submit" id="send_zap" value="send">Построить таблицу</button>
+          </form>
+          <!-- <button id="test_button">Tестовая кнопка</button> -->
+          <div class="mainTable"></div>
+
+<div class="listt">
+  <ol class="ulList">
+    
+  </ol>
+</div>
+          <script src="SEO_Nastya.js"></script>
+    </div>
+</body>
+
+
+
+</html>
