@@ -75,7 +75,7 @@ function createMainSearchURL(){
     // let searchURLrequestFilterTEST = 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&f14177449=13600062&f4424=12868&f5023=5866733&inheritFilters=false&lang=ru&page=1&query=%D0%B0%D0%B9%D1%84%D0%BE%D0%BD+13+128&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQICAAEBAAIEAAMDAAoACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMAL-kBTB4y7zN3NTMwAC5m'
     // ССылка без поискового запроса и фильтров
     // БЫЛ let searchURLrequestEmpty= 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&resultset=catalog&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQICAAEBAAIEAAMDAAoACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMAL-kBTB4y7zN3NTMwAC5m'
-    let searchURLrequestEmpty= 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117'
+    let searchURLrequestEmpty= 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=false&appType=1&curr=rub&dest=-446117'
         // Потом цвет: &f14177449=12065905
         // Потом Объем встроенной памяти: &f4424=117419
         // Потом Модель &f5023=786139550
@@ -178,7 +178,20 @@ function CreateMainTable(parent, cols, rows) {
 }
 
 
+function getSearchFilterMenu(searchQuery){
+// https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false
+// &appType=1
+// &autoselectFilters=false
+// &curr=rub
+// &dest=-446117
+// &inheritFilters=false
+// &lang=ru
+// &q1=айфон%2013
+// &q2=айфон%2013%1Eцвет%1Ff14177449%3Dчерный%1F13600062%1Eобъем%20встроенной%20памяти%1Ff4424%3D128%20ГБ%1F12868%1Eмодель%1Ff5023%3DiPhone%2013%1F5866733
+// &query=айфон%2013&resultset=filters&spp=30&suppressSpellcheck=false&uclusters=1
 
+
+}
 
 // buttonGetPosition.addEventListener("click", () => {
 //   // getCategotyJSON();
