@@ -139,8 +139,8 @@ buttonGetPosition.addEventListener('click', (event)=>{
     });
     })
 
-    CreateMainTable(mainTable, 3, 3);
-    console.log(searchURLrequestFilter);
+    // CreateMainTable(mainTable, 3, 3);
+    // console.log(searchURLrequestFilter);
     }
  
 )
