@@ -179,6 +179,7 @@ function CreateMainTable(parent, cols, rows) {
 
 
 
+
 // buttonGetPosition.addEventListener("click", () => {
 //   // getCategotyJSON();
 //   // getSearchQuery();
