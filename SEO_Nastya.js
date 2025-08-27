@@ -134,7 +134,7 @@ buttonGetPosition.addEventListener('click', (event)=>{
         //  ulList.innerHTML += products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating
         // ulList.append( `${products.id}, ${products.name}, ${products.sizes[0].price.product/100}, ${products.supplier},  ${products.supplierRating}`)
         let li = document.createElement('li')
-        li.append(products.id, ' ',products.name, ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
+        li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
         list.append(li)
     });
     })
