@@ -225,7 +225,7 @@ buttonGetFilterWB.addEventListener('click', (event)=>{
     // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2013&resultset=filters&spp=30&suppressSpellcheck=false
 }
 )
-
+console.log('.nojekyll')
 
 
 // buttonGetPosition.addEventListener("click", () => {
