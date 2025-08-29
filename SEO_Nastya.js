@@ -124,11 +124,14 @@ function createMainSearchURL(){
     // console.log (searchURL)
     // console.log(filterMemoryText)
 
+// https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786
+// &f14177449=12065905&f4424=25425&f5023=61513416&inheritFilters=false&lang=ru&page=1
+// &q1=айфон%2014%20256%1Eцвет%1Ff14177449%3Dбелый%1F12065905%1Eобъем%20встроенной%20памяти%1Ff4424%3D256%20ГБ%1F25425%1Eмодель%1Ff5023%3DiPhone%2014%20Pro%1F61513418%2CiPhone%2014%1F61513416&q2=айфон%2014%20256%1Eцвет%1Ff14177449%3Dбелый%1F12065905%1Eобъем%20встроенной%20памяти%1Ff4424%3D256%20ГБ%1F25425%1Eмодель%1Ff5023%3DiPhone%2014%20Pro%1F61513418&query=айфон%2014%20256&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false
 
 
     let linkQuery1 = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786`;
     let filterQiery = `&f14177449=${filterColor}&f4424=${filterMemory}&f5023=${filterModel}&inheritFilters=false&lang=ru&page=1`;
-    let linkQueryQ1 = `&q1=${SearchQueryValue}&query=${SearchQueryValue}`;
+    let linkQueryQ1 = `&q1=${SearchQueryValue}%1Eцвет%1Ff14177449%3D${filterColorText}%1F12065905%1Eобъем%20встроенной%20памяти%1Ff4424%3D${filterMemoryText}%20ГБ%1F25425%1Eмодель%1Ff5023%3D${filterModelText}%1F61513416`;
     let sortQuery = `&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false`
     let searchURL = linkQuery1.concat(`${filterQiery}${linkQueryQ1}${sortQuery}`)
     return searchURL
