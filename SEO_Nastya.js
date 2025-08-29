@@ -184,11 +184,13 @@ buttonGetPosition.addEventListener('click', (event)=>{
         console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
         let li = document.createElement('li')
         li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
+        
+        // Выделяем свои магазины Которые есть в списке
+            if(classRed(products.supplier, li)){li.classList.add('.red')}
+      
         list.append(li)
     });
     console.log('sdaf')
-
-    
     })
 
     // CreateMainTable(mainTable, 3, 3);
@@ -230,19 +232,78 @@ function CreateMainTable(parent, cols, rows) {
 }
 
 // Получить меню поисковго запросаа
-const buttonGetFilterWB = document.querySelector("#getFilterWB");
-buttonGetFilterWB.addEventListener('click', (event)=>{
-    // не обновляем страницу после нажатия кнопки "получить"
-    event.preventDefault();
-    let SearchQuery = document.querySelector('#SearchQuery')
-    let SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
-    let filterWB = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
-    console.log(filterWB)
-    // Запрос: iPhone 13 128
-    // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2013&resultset=filters&spp=30&suppressSpellcheck=false
+// const buttonGetFilterWB = document.querySelector("#getFilterWB");
+// buttonGetFilterWB.addEventListener('click', (event)=>{
+//     // не обновляем страницу после нажатия кнопки "получить"
+//     event.preventDefault();
+//     let SearchQuery = document.querySelector('#SearchQuery')
+//     let SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
+//     let filterWB = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
+//     fetch(filterWB)
+//     .then(response => response.json())
+//     .then(json => {
+//         json.data.filters.forEach(allFilters=>{ 
+//             console.log(allFilters);
+//             console.log(allFilters.name);
+//             if(allFilters.items){
+//                perebor(allFilters.items);
+//             }else{console.log(allFilters.name)}
+//             // let fil = allFilters.items
+//             // // fil.forEach(id=> console.log(id))
+//             // console.log(fil)
+//             // perebor(fil)
+ 
+//     });
+//     console.log('sdaf')
+//     })
+// }
+// )
+
+function perebor(mass){
+mass.forEach((num) => { console.log(num); });
+let newForm = document.document.querySelector('#selectNumber'); 
+let lableForm = document.createElement("label")
+lableForm.innerHTML=mass.name
+newForm.lableForm
+
 }
-)
-console.log('.nojekyll')
+
+function testeee(){
+let select = document.querySelector('#selectNumber'); 
+var numbers = [1, 2, 3];  
+for (var i = 0; i < numbers.length; ++i) {  
+    var option = numbers[i];  
+    var element = document.createElement('option');  
+    element.textContent = option;  
+    element.value = option;  
+    select.appendChild(element);  
+}  
+}
+
+// var select = document.querySelector('#selectNumber');  
+// var numbers = [1, 2, 3];  
+// for (var i = 0; i < numbers.length; ++i) {  
+//     var option = numbers[i];  
+//     var element = document.createElement('option');  
+//     element.textContent = option;  
+//     element.value = option;  
+//     select.appendChild(element);  
+// }  
+
+// for (let i = 0; i < 5; i++) {  
+//     document.getElementsByName('newFilterForm').appendChild(Object.assign(document.createElement('label'), { value: 'text', name: `input${i}`, placeholder: `Ввод ${i + 1}` }));  
+// }  
+
+// Создать кнопку/форму со списком
+        // <form name="newFilterForm"  method="POST">
+        //     let form = doc
+        //   <label for="fruits">Выберите фрукт:</label>  
+        //   <select id="fruits" name="fruits">  
+        //     <option value="apple">Яблоко</option>  
+        //     <option value="banana">Банан</option>  
+        //     <option value="orange">Апельсин</option>  
+        //   </select>
+        //   </form>
 
 
 // buttonGetPosition.addEventListener("click", () => {
@@ -257,5 +318,21 @@ console.log('.nojekyll')
 //   getAllProdukts()
 // });
 
+
+// выделить красным
+function classRed(supplierName, li){
+    let texts = allMagazin;
+    texts.forEach((input) => {
+    if (input == supplierName) {
+    li.classList.add("red")
+    console.log('Магазин есть')
+        return 1;
+    } else {
+    //   input.classList.add("wrong");
+        
+    }
+  })
+
+}
 
 
