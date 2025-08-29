@@ -82,29 +82,29 @@ nav ul {
             </label>
             <label>
               Фильтр Цена:
-              <select name="filterPoular" required>
-                <option value="popular">По популярности</option>
-                <option value="rate">По рейтингу</option>
-                <option value="priceup" selected>По возрастанию цены</option>
-                <option value="pricedown">По убыванию цены</option>
-                <option value="newly">По новинкам</option>
-                <option value="benefit">Сначала выгодные</option>
+              <select name="filterPoular" class='priceFilter &sort' required>
+                <option class="priceFilterSelected" value="popular">По популярности</option>
+                <option class="priceFilterSelected" value="rate">По рейтингу</option>
+                <option class="priceFilterSelected" value="priceup" selected>По возрастанию цены</option>
+                <option class="priceFilterSelected" value="pricedown">По убыванию цены</option>
+                <option class="priceFilterSelected" value="newly">По новинкам</option>
+                <option class="priceFilterSelected" value="benefit">Сначала выгодные</option>
               </select>
             </label>
             <label>
                 Фильтр Цвет:
-                <select name="filterColor">
-                  <option value="13600062">Черный</option>
-                  <option value="20214644">Бежевый</option>
-                  <option value="12065905">Белый</option>
-                  <option value="20214449">Голубой</option>
-                  <option value="14185777">Желтый</option>
-                  <option value="14835931">Зелёный</option>
-                  <option value="11807341">Красный</option>
-                  <option value="11807342">Розовый</option>
-                  <option value="20214430">Серый</option>
-                  <option value="20214646">Синий</option>
-                  <option value="14185662">Фиолетовый</option>
+                <select name="filterColor" class="&f14177449">
+                  <option value="13600062">черный</option>
+                  <option value="20214644">бежевый</option>
+                  <option value="12065905">белый</option>
+                  <option value="20214449">голубой</option>
+                  <option value="14185777">желтый</option>
+                  <option value="14835931">зелёный</option>
+                  <option value="11807341">красный</option>
+                  <option value="11807342">розовый</option>
+                  <option value="20214430">серый</option>
+                  <option value="20214646">синий</option>
+                  <option value="14185662">фиолетовый</option>
                 </select>
               </label>
             <label>
@@ -119,8 +119,6 @@ nav ul {
                   <option value="63321888">iPhone 14 Plus</option>
                   <option value="61513419">iPhone 14 Pro Max</option>
                   <option value="770965474">iPhone 15</option>
-                  <option value="770965474">iPhone 15</option>
-                  <option value="770965474">iPhone 15</option>
                   <option value="786139550">iPhone 15 Pro</option>
                   <option value="84424644">iPhone 15 Pro Max</option>
                   <option value="791556425">iPhone 15 Plus</option>
@@ -129,7 +127,7 @@ nav ul {
               </label>
                    <label>
                 Фильтр Встроенная память:
-                <select name="filterMemory" required>
+                <select name="filterMemory" class="&f4424" required>
                   <option value="12868" selected>128</option>
                   <option value="25425">256</option>
                   <option value="117419">512</option>
@@ -140,6 +138,7 @@ nav ul {
                 </select>
               </label>
             <button type="submit" id="send_zap" value="send">Построить таблицу</button>
+            <!-- <button type="submit" id="getFilterWB">Получить фильтр WB</button> -->
           </form>
           <!-- <button id="test_button">Tестовая кнопка</button> -->
           <div class="mainTable"></div>

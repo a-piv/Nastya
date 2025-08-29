@@ -356,3 +356,6 @@ async function getFilterCatalog(numberCategoruQuery){ // сюда вставля
   let filter = await fetch (linkFilter)
   console.log(filter.json())
 }
+
+
+

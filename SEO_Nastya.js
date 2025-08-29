@@ -72,10 +72,10 @@
 
 function createMainSearchURL(){
     // Готовая ссылка как пример
-    // let searchURLrequestFilterTEST = 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&f14177449=13600062&f4424=12868&f5023=5866733&inheritFilters=false&lang=ru&page=1&query=%D0%B0%D0%B9%D1%84%D0%BE%D0%BD+13+128&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQICAAEBAAIEAAMDAAoACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMAL-kBTB4y7zN3NTMwAC5m'
+    let searchURLrequestFilterTEST = 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&f14177449=13600062&f4424=12868&f5023=5866733&inheritFilters=false&lang=ru&page=1&query=%D0%B0%D0%B9%D1%84%D0%BE%D0%BD+13+128&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQICAAEBAAIEAAMDAAoACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMAL-kBTB4y7zN3NTMwAC5m'
     // ССылка без поискового запроса и фильтров
     // БЫЛ let searchURLrequestEmpty= 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&resultset=catalog&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQICAAEBAAIEAAMDAAoACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMAL-kBTB4y7zN3NTMwAC5m'
-    let searchURLrequestEmpty= 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=false&appType=1&curr=rub&dest=-446117'
+    let searchURLrequestEmpty= 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-446117'
         // Потом цвет: &f14177449=12065905
         // Потом Объем встроенной памяти: &f4424=117419
         // Потом Модель &f5023=786139550
@@ -94,17 +94,46 @@ function createMainSearchURL(){
         //     &uv=AQUAAQIEAAMDAAoBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMBTB4y7zN3NTMwAC5mL-kA
     // &inheritFilters=false&lang=ru&page=1&resultset=catalog&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQICAAEBAAIEAAMDAAoACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMAL-kBTB4y7zN3NTMwAC5m'
     
-    let SearchQuery = document.querySelector('#SearchQuery')
-    let SearchQueryValue = SearchQuery.value.replace(/ /g, '+');
-    let filterPoular = formSelected.filterPoular.value;
-    let filterColor = formSelected.filterColor.value;
-    let filterModel = formSelected.filterModel.value;
-    let filterMemory = formSelected.filterMemory.value;
-    let searchURLFilter = searchURLrequestEmpty.concat('&f14177449=',filterColor,'&f4424=',filterMemory,'&f5023=',filterModel, '&inheritFilters=false&lang=ru&page=1','&query=', SearchQueryValue,
-        '&resultset=catalog','&sort=',filterPoular,'&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0','&uv=AQUAAQIEAAMDAAoBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMBTB4y7zN3NTMwAC5mL-kA')
-    return searchURLFilter
-}
 
+
+    let SearchQuery = document.querySelector('#SearchQuery')
+    let SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
+    let filterPoularText = formSelected.filterPoular.options[formSelected.filterPoular.options.selectedIndex].innerText;
+    let filterPoular = formSelected.filterPoular.value;
+    let filterColorText = formSelected.filterColor.options[formSelected.filterColor.options.selectedIndex].innerText;
+    let filterColor = formSelected.filterColor.value;
+    let filterModelText = formSelected.filterModel.options[formSelected.filterModel.options.selectedIndex].innerText;
+    let filterModel = formSelected.filterModel.value;
+    let filterMemoryText = formSelected.filterMemory.options[formSelected.filterMemory.options.selectedIndex].innerText;
+    let filterMemory = formSelected.filterMemory.value;
+    let q1Link = `${SearchQueryValue}&f14177449=${filterColor}&f4424=${filterMemory}&f5023=${filterModel}&inheritFilters=false&lang=ru&page=1&query=${SearchQueryValue})`
+
+    
+    // Ссылка айфон 14 256 белый iphone 14256 ри 28.08.2025
+    // 1. https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-446117
+    // 2. &f14177449=12065905&f4424=25425&f5023=61513416&inheritFilters=false&lang=ru&page=1&
+    // 3. q1=айфон%2014%20256&
+    // 4. q2=айфон%2013%20128%1Eцвет%1Ff14177449%3Dбелый%1F12065905%1Eмодель%1Ff5023%3DiPhone%2013%1F5866733&q3=айфон%2013%20128&query=айфон%2014%20256&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQIEAAMCAAEDAAoBAAIACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMBTB4AMu8zdzUzMAAuZjAV
+    // let linkQuery1 = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-446117`;
+    // let linkQuery2Filter = `&f14177449=${filterColor}&f4424=${filterMemory}&f5023=${filterModel}&inheritFilters=false&lang=ru&page=1`;
+    // let linkQueryQ1 = `&q1=${SearchQueryValue}`
+    // let linkQueryQ2 = `&q2=${SearchQueryValue}%1Eцвет%1Ff14177449%3D${filterColorText}%1F12065905%1Eобъем%20встроенной%20памяти%1Ff4424%3D${filterMemoryText}%20ГБ%1F25425%1Eмодель%1Ff5023%3D${filterModelText}%1F61513416`
+    // let linkSort = `&query=${SearchQueryValue}&resultset=catalog&sort=${filterPoular}&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0`
+    // let linkQv = `&uv=AQUAAQIEAAMCAAEDAAoBAAIACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMBTB4AMu8zdzUzMAAuZjAV`
+    // let searchURL = linkQuery1.concat(`${linkQuery2Filter}${linkQueryQ1}${linkQueryQ2}${linkSort}${linkQv}`)
+    // console.log (searchURL)
+    // console.log(filterMemoryText)
+
+
+
+    let linkQuery1 = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786`;
+    let filterQiery = `&f14177449=${filterColor}&f4424=${filterMemory}&f5023=${filterModel}&inheritFilters=false&lang=ru&page=1`;
+    let linkQueryQ1 = `&q1=${SearchQueryValue}&query=${SearchQueryValue}`;
+    let sortQuery = `&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false`
+    let searchURL = linkQuery1.concat(`${filterQiery}${linkQueryQ1}${sortQuery}`)
+    return searchURL
+
+}
 
 //     "supplier": "iReStore",
 //     "supplierRating": 4.5,
@@ -119,24 +148,27 @@ let ulList = document.querySelector('ulList')
 const buttonGetPosition = document.querySelector("#send_zap");
 
 buttonGetPosition.addEventListener('click', (event)=>{
+    
     // не обновляем страницу после нажатия кнопки "получить"
     event.preventDefault();
     searchURLrequestFilter = createMainSearchURL()
     fetch(searchURLrequestFilter)
     .then(response => response.json())
     .then(json => {
-    console.log('Создал таблицу');
+    
+        console.log('Создал таблицу');
         let list = document.querySelector('.ulList')
 
-    console.log(json.products.length);
-    json.products.forEach(products=>{ 
+    
+        json.products.forEach(products=>{ 
         console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
-        //  ulList.innerHTML += products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating
-        // ulList.append( `${products.id}, ${products.name}, ${products.sizes[0].price.product/100}, ${products.supplier},  ${products.supplierRating}`)
         let li = document.createElement('li')
         li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
         list.append(li)
     });
+    console.log('sdaf')
+
+    
     })
 
     // CreateMainTable(mainTable, 3, 3);
@@ -177,21 +209,21 @@ function CreateMainTable(parent, cols, rows) {
 	parent.appendChild(table);
 }
 
-
-function getSearchFilterMenu(searchQuery){
-// https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false
-// &appType=1
-// &autoselectFilters=false
-// &curr=rub
-// &dest=-446117
-// &inheritFilters=false
-// &lang=ru
-// &q1=айфон%2013
-// &q2=айфон%2013%1Eцвет%1Ff14177449%3Dчерный%1F13600062%1Eобъем%20встроенной%20памяти%1Ff4424%3D128%20ГБ%1F12868%1Eмодель%1Ff5023%3DiPhone%2013%1F5866733
-// &query=айфон%2013&resultset=filters&spp=30&suppressSpellcheck=false&uclusters=1
-
-
+// Получить меню поисковго запросаа
+const buttonGetFilterWB = document.querySelector("#getFilterWB");
+buttonGetFilterWB.addEventListener('click', (event)=>{
+    // не обновляем страницу после нажатия кнопки "получить"
+    event.preventDefault();
+    let SearchQuery = document.querySelector('#SearchQuery')
+    let SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
+    let filterWB = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
+    console.log(filterWB)
+    // Запрос: iPhone 13 128
+    // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2013&resultset=filters&spp=30&suppressSpellcheck=false
 }
+)
+
+
 
 // buttonGetPosition.addEventListener("click", () => {
 //   // getCategotyJSON();
