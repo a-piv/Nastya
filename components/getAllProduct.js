@@ -1,12 +1,11 @@
 function getAllproducts(link){
     // let ulList = document.querySelector('ulList')
-    let div = document.createElement('div')
-    div.classList.add('products')
-    let main = document.querySelector('.main')
-    main.append(div)
-    let list = document.createElement('ul')
+    let div = document.querySelector('.products')
+    div.textContent=""
+    let list = document.createElement('ol')
     list.classList.add('ulList')
     div.append(list)
+    // list.removeChild(li);
 
 console.log(link.mainLink)
 

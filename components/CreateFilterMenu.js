@@ -9,6 +9,14 @@ const classFormSearchFilter = 'formSearchFilter';
 
 function createForm(className){
     let searchClass = document.querySelector(className)
+    // очищаем форму и общее кол-во товаров
+    if(document.querySelector('#idFormSearch')){
+        document.querySelector('#idFormSearch').textContent=""
+        document.querySelector('.generalInfo').remove()
+        // document.querySelector('.buttonGetList').remove()
+    }
+        
+    
     let form = document.createElement('form')
     form.setAttribute('id', 'idFormSearch'); 
     form.classList.add('formSearchFilter')
@@ -24,7 +32,7 @@ function createForm(className){
     buttonSendForm.setAttribute('type', 'submit'); 
     // buttonSendForm.setAttribute('submit', 'getLinkParse'); 
     form.append(buttonSendForm)
-    searchClass.append(form)
+    searchClass.parentNode.append(form)
 
     // вызываем функцию создания ссылки для парсинга
     buttonSendForm.addEventListener('click', (event) => {
@@ -107,11 +115,14 @@ function createFormElements(element){
     }   
 }
 
-// Функция создаёт общую информацию в конце формы (main)
+// Функция создаёт общую информацию в конце формы (main) и создаём див для всех товаров
 function createDataGeneralInfo(textName, name, textmeaning, meaning){
-    let divNext = document.querySelector('.test')
+    let divNext = document.querySelector('.main')
     let generalInfo = document.createElement('div')
     generalInfo.classList.add('generalInfo')
     generalInfo.textContent= textName + name + textmeaning + meaning
     divNext.append(generalInfo)
+    let products = document.createElement('div')
+    products.classList.add('products')
+    divNext.append(products)
 }
