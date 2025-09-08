@@ -1,6 +1,6 @@
-function createMainSearchURL(){
-    let SearchQuery = document.querySelector('#SearchQuery')
-    let SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
+// function createMainSearchURL(){
+//     let SearchQuery = document.querySelector('#SearchQuery')
+//     let SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
     // let filterPoularText = formSelected.filterPoular.options[formSelected.filterPoular.options.selectedIndex].innerText;
     // let filterPoular = formSelected.filterPoular.value;
     // let filterColorText = formSelected.filterColor.options[formSelected.filterColor.options.selectedIndex].innerText;
@@ -54,9 +54,9 @@ function createMainSearchURL(){
 //     let sortQuery = `&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false`
 //     let searchURL = linkQuery1.concat(`${filterQiery}${linkQueryQ1}${sortQuery}`)
 
-    return searchURL
+//     return searchURL
 
-}
+// }
 
 //     "supplier": "iReStore",
 //     "supplierRating": 4.5,
@@ -66,51 +66,46 @@ function createMainSearchURL(){
 //             "logistics": 10100,
 //             "return": 0
 //           },
-let ulList = document.querySelector('ulList')
+// let ulList = document.querySelector('ulList')
 
-const buttonGetPosition = document.querySelector("#send_zap");
+// const buttonGetPosition = document.querySelector("#send_zap");
 
-buttonGetPosition.addEventListener('click', (event)=>{
+// buttonGetPosition.addEventListener('click', (event)=>{
     
-    // не обновляем страницу после нажатия кнопки "получить"
-    event.preventDefault();
-    searchURLrequestFilter = createMainSearchURL()
-    fetch(searchURLrequestFilter)
-    .then(response => response.json())
-    .then(json => {
+//     // не обновляем страницу после нажатия кнопки "получить"
+//     event.preventDefault();
+//     searchURLrequestFilter = createMainSearchURL()
+//     fetch(searchURLrequestFilter)
+//     .then(response => response.json())
+//     .then(json => {
     
-        console.log('Создал таблицу');
-        let list = document.querySelector('.ulList')
+//         console.log('Создал таблицу');
+//         let list = document.querySelector('.ulList')
 
-    let allProductsmas = json.products
-        allProductsmas.forEach(products=>{ 
-        console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
-        let li = document.createElement('li')
-        li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
+//     let allProductsmas = json.products
+//         allProductsmas.forEach(products=>{ 
+//         console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
+//         let li = document.createElement('li')
+//         li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
         
-        // Выделяем свои магазины Которые есть в списке
-            if(classRed(products.supplier, li)){li.classList.add('.red')}
+//         // Выделяем свои магазины Которые есть в списке
+//             if(classRed(products.supplier, li)){li.classList.add('.red')}
       
-        list.append(li)
-    });
-    console.log('sdaf')
-    })
+//         list.append(li)
+//     });
+//     console.log('sdaf')
+//     })
 
-    // CreateMainTable(mainTable, 3, 3);
-    // console.log(searchURLrequestFilter);
-    }
+//     // CreateMainTable(mainTable, 3, 3);
+//     // console.log(searchURLrequestFilter);
+//     }
  
-)
+// )
 
 // function logArrayElements(products) {
 //     ulList.appendChild(products)
 // }
 
-// Функция считает кол-во дней доставки
-function dayDelivery(time1,time2){
-    let summTimeDay = Math.round((time1 + time2) / 24)
-    return (summTimeDay)
-}
 
 // Функция считает цену для покупателя (базовая цена - скидка)
 // function priceForClient(priceBasic, ){
@@ -158,21 +153,7 @@ function dayDelivery(time1,time2){
 // }
 
 
-// выделить красным магазины
-function classRed(supplierName, li){
-    let texts = allMagazin; // массив с магазинами
-    texts.forEach((input) => {
-    if (input == supplierName) {
-    li.classList.add("red")
-    console.log('Магазин есть')
-        return 1;
-    } else {
-    //   input.classList.add("wrong");
-        
-    }
-  })
 
-}
 
 
 
@@ -212,3 +193,28 @@ buttonGetFilter.addEventListener('click', (event) => {
     
     
 })
+
+
+// Функция считает кол-во дней доставки
+function dayDelivery(time1,time2){
+    let summTimeDay = Math.round((time1 + time2) / 24)
+    return (summTimeDay)
+}
+
+
+
+// выделить красным магазины
+function classRed(supplierName, li){
+    let texts = allMagazin; // массив с магазинами
+    texts.forEach((input) => {
+    if (input == supplierName) {
+    li.classList.add("red")
+    console.log('Магазин есть')
+        return 1;
+    } else {
+    //   input.classList.add("wrong");
+        
+    }
+  })
+
+}
