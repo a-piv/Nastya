@@ -321,6 +321,7 @@ async function parseMenuWB (link){
   let parseMenuWB =  await fetch(link);
   // fetch(positionURL);
   
+  
   let massivMenu =  await parseMenuWB.json()
   console.log( massivMenu)
   massivMenu.forEach((art)=>{
@@ -328,6 +329,9 @@ async function parseMenuWB (link){
 
 
     let menuWB = new GetAllCategories(art);
+    //  menuWB._getFilters()
+  
+
     menuWB._getTemplateCatalogMenu()
     // console.log(art.childs)
   })

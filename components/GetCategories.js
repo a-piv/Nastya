@@ -15,7 +15,7 @@ class GetAllCategories {
   }
 
   _getFilters(filter){
-    console.log(filter)
+    console.log('filter')
   }
 
   _getTemplateCatalogMenu() {

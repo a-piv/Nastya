@@ -73,8 +73,8 @@ nav ul {
 
 </head>
 <body>
-    <div>
-        <form name="formSelected"  method="POST">
+    <div class="main">
+        <form name="formSelected" class='.searchForm' method="POST">
             <label>
               Поисковый зпрос:
               <input
@@ -131,20 +131,20 @@ nav ul {
                 </select>
 
               </label>
-                   <label>
+              <label>
                 Фильтр Встроенная память:
                 <select name="filterMemory" class="&f4424" required>
                   <option value="12868" selected>128</option>
                   <option value="25425">256</option>
                   <option value="117419">512</option>
-
-
-
-                  
                 </select>
               </label>
+              <label class=".filterSearch">
+                <div> Курьер</div>
+                      <input type="checkbox" name="delivery" value="courier">
+              </label>
             <button type="submit" id="send_zap" value="send">Построить таблицу</button>
-            <!-- <button type="submit" id="getFilterWB">Получить фильтр WB</button> -->
+            <button type="submit" id="getFilterWB">Получить фильтр WB</button>
           </form>
           <!-- <button id="test_button">Tестовая кнопка</button> -->
       <div class="mainTable"></div>
@@ -163,13 +163,13 @@ nav ul {
 
       </div> -->
 
-    <div class="listt">
-      <ol class="ulList">
-        
-      </ol>
-    </div>
+
+    <div class="test"></div>
           <script src="allMagazin.js"></script>
           <script src="SEO_Nastya.js"></script>
+          <script src="./components/CreateFilterMenu.js"></script>
+          <script src="./components/getLinkParse.js"></script>
+          <script src="./components/getAllProduct.js"></script>
     </div>
 </body>
 
