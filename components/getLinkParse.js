@@ -70,48 +70,17 @@ function serializeForm(formNode) {
             {
                     console.log(element.selectedIndex)
                     console.log(element[element.options.selectedIndex])
-                    // console.log(element.options)
-                    // console.log(element.options.selectedIndex) Работает. выбранный инекс
-                    // let selectIndexXX = element.options.selectedIndex -1 
-                    // console.log(element.options[selectIndexXX].text)
-                    // console.log(element.text) не работает
-                    // console.log(element.options, element.name)
-                    // console.log(`&${element.name}=${element.options[element.selectedIndex].value}`)
-                    // Работает. Если есть текст в выбранной форме
-                    // console.log(element.options[element.options.selectedIndex-1].text, element.options[element.options.selectedIndex-1].value)
-                    // console.log(name, element.options[element.options.selectedIndex-1].value)
-                    // let biooods = Boolean(element.options[element.options.selectedIndex].text)
-                    // console.log(biooods)
                     if (element.options[element.options.selectedIndex].text)
                     {
-                        // console.log('Есть Select ')
-                        // console.log (element.options[element.options.selectedIndex].text)
-                        // console.log(name, element.options[element.options.selectedIndex].value)
-                        
                         linnkk = linnkk.concat(`&${element.name}=${element.options[element.selectedIndex].value}`)
 
                     }else{
-                        // Если есть селект, но он не заполнен
-                    // console.log('elseee')
                     console.log('Какой-то элемент не выбирается')
                     // console.log(element.options[element.options.selectedIndex].text)
-                    // console.log(element.options.selectedIndex)
-                    // console.log(element.options[element.selectedIndex].value)
-                    // console.log(element.options[element.selectedIndex].text)
-                    // console.log(element.options[element.selectedIndex])
                         }
 
             }
         
-                //              var e = document.getElementById("ddlViewBy");
-                // var value = e.value;
-                // var text = e.options[e.selectedIndex].text;
-                
-                //   const { name, type } = element
-                //   console.log(name, type)
-                //   const value = type === 'checkbox' ? element.checked : element.value
-        
-    
             // console.log(linnkk)
             let queryAll = (`&q1=${SearchQueryValue}&query=${SearchQueryValue}`)
             mainLink = (linkWBAction1 + linnkk + linkWBAction2 + queryAll + linkWBAction3)
