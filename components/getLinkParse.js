@@ -23,6 +23,7 @@
 
 let linkWBAction1 = 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786'
 // Элементы из фильтра
+// '&hide_dtype=14&inheritFilters=false&lang=ru&page=1'
 let linkWBAction2 = '&hide_dtype=14&inheritFilters=false&lang=ru&page=1'
 // потом поисковой запрос queryAll
 let linkWBAction3= `&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false`

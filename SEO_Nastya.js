@@ -166,12 +166,16 @@ buttonGetFilter.addEventListener('click', (event) => {
     SearchQuery = document.querySelector('#SearchQuery')
     SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
     console.log(SearchQueryValue)
-    
     // Деаем ссыку на запрос
-    // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2016%20256&resultset=filters&spp=30&suppressSpellcheck=false
     // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2013%20256&resultset=filters&spp=30&suppressSpellcheck=false
     let linkFilterWB = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
-    console.log(linkFilterWB);
+    // console.log(linkFilterWB);
+
+   
+    menuFilter(linkFilterWB)
+        
+})
+
 
     function menuFilter(linkMenu){
     // создаю форму, кладу её в класс .test, запускаю парсинг фильтра в класс формы
@@ -188,12 +192,6 @@ buttonGetFilter.addEventListener('click', (event) => {
             })
         });
     }
-    
-    menuFilter(linkFilterWB)
-    
-    
-})
-
 
 // Функция считает кол-во дней доставки
 function dayDelivery(time1,time2){
