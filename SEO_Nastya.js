@@ -170,8 +170,6 @@ buttonGetFilter.addEventListener('click', (event) => {
     // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2013%20256&resultset=filters&spp=30&suppressSpellcheck=false
     let linkFilterWB = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
     // console.log(linkFilterWB);
-
-   
     menuFilter(linkFilterWB)
         
 })
