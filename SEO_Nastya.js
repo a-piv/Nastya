@@ -82,8 +82,8 @@ buttonGetPosition.addEventListener('click', (event)=>{
         console.log('Создал таблицу');
         let list = document.querySelector('.ulList')
 
-    
-        json.products.forEach(products=>{ 
+    let allProductsmas = json.products
+        allProductsmas.forEach(products=>{ 
         console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
         let li = document.createElement('li')
         li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
