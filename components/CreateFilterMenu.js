@@ -4,56 +4,66 @@
 
 // const { createElement } = require("react");
 // создаём форму
-const classFormSearchFilter = 'formSearchFilter';
 
 
 function createForm(className){
     let searchClass = document.querySelector(className)
     // очищаем форму и общее кол-во товаров
-    if(document.querySelector('#idFormSearch')){
-        document.querySelector('#idFormSearch').textContent=""
-        document.querySelector('.generalInfo').remove()
-        // document.querySelector('.buttonGetList').remove()
-    }
-        
-    
+    // if(document.querySelector('#idFormSearch')){
+    //     document.querySelector('#idFormSearch').textContent=""
+    //     document.querySelector('.generalInfo').remove()
+    //     // document.querySelector('.buttonGetList').remove()
+    // }
     let form = document.createElement('form')
     form.setAttribute('id', 'idFormSearch'); 
     form.classList.add('formSearchFilter')
     // form.setAttribute('method', 'GET'); 
     // form.setAttribute('action','https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&page=1')
     // &autoselectFilters=false 
+
+    searchClass.append(form)
     
+    // createButtonGetProducts(form)
 
-    // Создаём кнопку "Получить товары"
-    let buttonSendForm = document.createElement('button')
-    buttonSendForm.classList.add('buttonGetList')
-    buttonSendForm.textContent = "Получить товары"
-    buttonSendForm.setAttribute('type', 'submit'); 
-    // buttonSendForm.setAttribute('submit', 'getLinkParse'); 
-    form.append(buttonSendForm)
-    searchClass.parentNode.append(form)
-
-    // вызываем функцию создания ссылки для парсинга
-    buttonSendForm.addEventListener('click', (event) => {
-  event.preventDefault()
-//   функция создаёт ссылку для парсинга товаров
-  let linkAllproducts = serializeForm(form)
-  console.log(linkAllproducts)
-  getAllproducts(linkAllproducts)
-  
-})
 }
 
+
+    // Создаём кнопку "Получить товары"
+    function createButtonGetProducts(form){
+        let buttonSendForm = document.createElement('button')
+        buttonSendForm.classList.add('buttonGetList')
+        buttonSendForm.textContent = "Получить товары"
+        buttonSendForm.setAttribute('type', 'submit'); 
+        // buttonSendForm.setAttribute('submit', 'getLinkParse'); 
+        let inp = document.querySelector('.mainTable')
+        inp.append(buttonSendForm)
+            // вызываем функцию создания ссылки для парсинга
+        buttonSendForm.addEventListener('click', (event) => {
+        event.preventDefault()
+        //   функция создаёт ссылку для парсинга товаров
+        let form = document.querySelector('#idFormSearch')
+        let linkAllproducts = serializeForm(form)
+        console.log(linkAllproducts)
+        
+        // Создаём див для списка товаров
+        let products = document.createElement('div')
+        products.classList.add('products')
+        inp.append(products)
+        getAllproducts(linkAllproducts)
+        // выключаем кнопку после нажатияы
+        buttonOff('.buttonGetList')
+    } )
+    }
 
 
 
 // Функция создаёт список фильтров
 function createFormElements(element){
+    // console.log(element)
     // вставляем в див с классом classMenu
     // let classform = document.querySelector('.mainTable')
 
-    let formFilter = document.querySelector(`.${classFormSearchFilter}`)
+    let formFilter = document.querySelector('.formSearchFilter')
     // if (element.items){console.log(element.items.length)}else{console.log(0)}
     // Передаю элемент меню
     // 1. Есть итемс, длина больше одного - то строю выпадающий список селект
@@ -68,6 +78,8 @@ function createFormElements(element){
                                     createInput.setAttribute('rus', element.name);
                                     createInput.name = element.key
                                     createInput.id = element.key
+                                    let frm = createInput.id
+                                    createInput.addEventListener("change", functionTest)
                                     // let createOptions = document.createElement('option')
                                     // createOptions.setAttribute('value', '')
                                     // createOptions.setAttribute('selected=', 'selected') //<option value="" selected="selected">Выберите...</option>)
@@ -117,12 +129,36 @@ function createFormElements(element){
 
 // Функция создаёт общую информацию в конце формы (main) и создаём див для всех товаров
 function createDataGeneralInfo(textName, name, textmeaning, meaning){
-    let divNext = document.querySelector('.main')
+    let divNext = document.querySelector('.mainTable')
     let generalInfo = document.createElement('div')
     generalInfo.classList.add('generalInfo')
     generalInfo.textContent= textName + name + textmeaning + meaning
     divNext.append(generalInfo)
-    let products = document.createElement('div')
-    products.classList.add('products')
-    divNext.append(products)
+    // let products = document.createElement('div')
+    // products.classList.add('products')
+    // divNext.append(products)
+}
+
+
+
+function functionTest(event){
+    console.log("Кнопка выбора работает")
+    console.log(event.target.name)
+    console.log(event.target.classList)
+    console.log(event.target.value)
+    event.target.classList.add('bg-yellow');
+    console.log(event.target.parentNode.classList.add('bg-parent'));
+    buttonOn('.buttonGetList')
+}
+
+
+
+// Отключаем кнопку после нажатия
+function buttonOff(btnClass){
+ document.querySelector(btnClass).disabled = true;
+}
+
+// Включаем кнопку после изменения формы
+function buttonOn(btnClass){
+ document.querySelector(btnClass).disabled = false;
 }

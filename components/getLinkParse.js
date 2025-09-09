@@ -1,7 +1,7 @@
 // Про создание формы
 // https://doka.guide/js/deal-with-forms/
-
-let linkWBAction1 = 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
+// Было'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
+let linkWBAction1 = 'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786'
 // Элементы из фильтра
 // было '&hide_dtype=14&inheritFilters=false&lang=ru&page=1'
 let linkWBAction2 = '&inheritFilters=false&lang=ru&page=1'
@@ -10,6 +10,7 @@ let linkWBAction3= `&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=fa
 
 // Функця создаёт форму фильтра
 function serializeForm(formNode) {
+    document.querySelector('.mainTable').text=""
   const { elements } = formNode
     let mainLink =''
     let linnkk = ''

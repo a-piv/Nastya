@@ -3,7 +3,11 @@ let buttonGetFilter = document.querySelector('#getFilterWB');
 buttonGetFilter.addEventListener('click', (event) => {
     // не обновляем страницу после нажатия кнопки "получить товары"
     event.preventDefault();
-    
+    //  this.disabled = true;
+//    this.value = 'Отправка…';
+    // const button = document.querySelector('#button');   const disableButton = () => { button.disabled = true; };   button.addEventListener('click', disableButton).
+    document.querySelector('.mainTable').textContent=""
+    console.log("Удилать фору")
     SearchQuery = document.querySelector('#SearchQuery')
     SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
     console.log(SearchQueryValue)
@@ -18,14 +22,14 @@ buttonGetFilter.addEventListener('click', (event) => {
 
     function menuFilter(linkMenu){
     // создаю форму, кладу её в класс .products, запускаю парсинг фильтра в класс формы
-    createForm('.searchForm')
+    createForm('.mainTable')
     fetch(linkMenu)
     .then(response => response.json())
     .then(commits => 
         {  
 
             createDataGeneralInfo('Категория: ', commits.metadata.context, ' Всего товаров:  ', commits.data.total)
-
+            createButtonGetProducts('.mainTable')
             commits.data.filters.forEach((elem)=>{
                 createFormElements(elem)
             })
@@ -41,17 +45,17 @@ function dayDelivery(time1,time2){
 
 
 // выделить красным магазины
-function classRed(supplierName, li){
+function productsSupplierRed(supplierName, li){
     let texts = allMagazin; // массив с магазинами
-    texts.forEach((input) => {
-    if (input == supplierName) {
-    li.classList.add("red")
-    console.log('Магазин есть')
-        return 1;
-    } else {
-    //   input.classList.add("wrong");
-        
+    let magaz = ''
+    for(let i =0; i<texts.length; i++){
+        if (texts[i].name === supplierName) {
+        li.classList.add("red")
+        magaz = texts[i].reduction
+        break
+        }else{
+            magaz = supplierName
+        }
     }
-  })
-
+    return (magaz);
 }

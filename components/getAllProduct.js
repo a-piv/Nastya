@@ -37,12 +37,16 @@ console.log(link.mainLink)
             document.querySelector('.generalInfo').textContent=(`Всего товаров: ${json.total} шт.`)
             
             json.products.forEach(products=>{ 
-            console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
+            // console.log(products.id, products.name, products.sizes[0].price.product/100, products.supplier,  products.supplierRating,'(', products.time1, products.time2,')', dayDelivery(products.time1, products.time2))
             let li = document.createElement('li')
-            li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',products.supplier,  ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
+            // Проверяем есть ли в нашем списке такой мазаин, выдеяем его красным и меняем название
+            let supplier = productsSupplierRed(products.supplier, li)
+            // console.log(supplier)
+                       
+            li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
             
             // Выделяем свои магазины Которые есть в списке
-                if(classRed(products.supplier, li)){li.classList.add('.red')}
+                // if(productsSupplierRed(products.supplier, li)){li.classList.add('.red')}
         
             list.append(li)
 
