@@ -82,7 +82,7 @@ function createFormElements(element){
                                     
                                     // Добавляем класс в ключевые варианты: модель, цвет, память
                                     let classListt = classColorMainSelect(element.key)
-                                    console.log(parent.element)
+                                    // console.log(element )
                                     createInput.setAttribute('class', classListt); 
 
                                     createInput.addEventListener("change", functionTest)
@@ -223,7 +223,7 @@ function colorBG(value){
 // Выделяем модель, память и цвет
 function classColorMainSelect(value){
     // Цвет
-    console.log(value)
+    // console.log(value)
     if (value == 'fcolor'){
         return 'border-fcolor'
      }

@@ -7,7 +7,7 @@ buttonGetFilter.addEventListener('click', (event) => {
 //    this.value = 'Отправка…';
     // const button = document.querySelector('#button');   const disableButton = () => { button.disabled = true; };   button.addEventListener('click', disableButton).
     document.querySelector('.mainTable').textContent=""
-    console.log("Удилать фору")
+    // console.log("Удилать фору")
     SearchQuery = document.querySelector('#SearchQuery')
     SearchQueryValue = SearchQuery.value.replace(/ /g, '%20');
     console.log(SearchQueryValue)
