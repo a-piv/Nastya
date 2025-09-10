@@ -79,6 +79,12 @@ function createFormElements(element){
                                     createInput.name = element.key
                                     createInput.id = element.key
                                     let frm = createInput.id
+                                    
+                                    // Добавляем класс в ключевые варианты: модель, цвет, память
+                                    let classListt = classColorMainSelect(element.key)
+                                    console.log(parent.element)
+                                    createInput.setAttribute('class', classListt); 
+
                                     createInput.addEventListener("change", functionTest)
                                     // let createOptions = document.createElement('option')
                                     // createOptions.setAttribute('value', '')
@@ -110,6 +116,7 @@ function createFormElements(element){
                                     createInputt.setAttribute('type', 'checkbox');
                                     createInputt.setAttribute('id', element.key);
                                     // createInput.textContent(elen.name)
+
                                     createLablee.append(createInputt)
                                     formFilter.append(createLablee)
                 }
@@ -140,18 +147,97 @@ function createDataGeneralInfo(textName, name, textmeaning, meaning){
 }
 
 
+function colorMainMenu(event){
+        // если модель, память или цвет, добавляем класс
+        console.log('Цвет меню добавлен')
+    if(event.target.name == fcolor){
+        // event.target.classList.add('classColor')
+        return(classColor)
+    }else if(event.target.name == f4424){
+        // event.target.classList.add('classMemory')
+        return(classMemory)
+    }else if(event.target.name == f5023){
+        // event.target.classList.add('classModel')
+        return(classModel)
+    }else {}
 
-function functionTest(event){
-    console.log("Кнопка выбора работает")
-    console.log(event.target.name)
-    console.log(event.target.classList)
-    console.log(event.target.value)
-    event.target.classList.add('bg-yellow');
-    console.log(event.target.parentNode.classList.add('bg-parent'));
-    buttonOn('.buttonGetList')
 }
 
 
+
+function functionTest(event){
+    console.log("Кнопка выбора работает")
+    // console.log(event.target.name)
+    // console.log(event.target.classList)
+    event.target.classList=''
+    console.log(event.target.value)
+    // console.log(event.target.options[event.target.selectedIndex].text)
+    console.log(event.target.name)
+
+    
+    // если форма содержит текст, то добавляем класс
+    if (event.target.options[event.target.selectedIndex].text)
+        {event.target.classList.add('bg-yellow');
+        event.target.parentNode.classList.add('bg-parent')}
+    else{event.target.classList.remove('bg-yellow');
+        event.target.parentNode.classList.remove('bg-parent')}
+
+    // Проверка на цвет
+    if(event.target.options[event.target.selectedIndex].value){
+        let value = event.target.options[event.target.selectedIndex].value
+        let color = colorBG(value)
+        event.target.classList.add(color)
+    }
+    buttonOn('.buttonGetList')
+}
+
+// Для цветов телефона
+function colorBG(value){
+    console.log(value)
+    if (value=="16119260") //бежевый
+        {return 'beige'}
+    else if (value=="16777215") //белый
+        {return 'white'}
+    else if (value=="11393254") //голубой
+        {return 'azure'}
+    else if (value=="16776960") //желтый
+        {return 'yellow'}
+    else if (value=="32768") //зелёный
+        {return 'green'}
+    else if (value=="16711680") //красный
+        {return 'red'}
+    else if (value=="16761035") //розовый
+        {return 'pink'}
+    else if (value=="8421504") //серый
+        {return 'gray'}
+    else if (value=="255") //синий
+        {return 'blue'}
+    else if (value=="15631086") //фиолетовый
+        {return 'violet'}
+    else if (value=="0") //фиолетовый
+        {return 'black'}
+    else 
+        {return 'other'}
+}
+
+// Выделяем модель, память и цвет
+function classColorMainSelect(value){
+    // Цвет
+    console.log(value)
+    if (value == 'fcolor'){
+        return 'border-fcolor'
+     }
+    // Модель
+    else if (value == 'f5023'){
+        return 'border-model'
+    }
+    // Объем встроенной памяти
+    else if (value == 'f4424'){
+        return 'border-memory'
+    }else{
+        return 'other'
+    }
+}
 
 // Отключаем кнопку после нажатия
 function buttonOff(btnClass){

@@ -50,7 +50,7 @@ function productsSupplierRed(supplierName, li){
     let magaz = ''
     for(let i =0; i<texts.length; i++){
         if (texts[i].name === supplierName) {
-        li.classList.add("red")
+        li.classList.add("red-text")
         magaz = texts[i].reduction
         break
         }else{

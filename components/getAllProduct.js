@@ -43,7 +43,7 @@ console.log(link.mainLink)
             let supplier = productsSupplierRed(products.supplier, li)
             // console.log(supplier)
                        
-            li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (', products.time1,' ', products.time2,')', )
+            li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д' /*, ' (', products.time1,' ', products.time2,')', */)
             
             // Выделяем свои магазины Которые есть в списке
                 // if(productsSupplierRed(products.supplier, li)){li.classList.add('.red')}
