@@ -205,7 +205,7 @@ function colorBG(value){
     else if (value=="32768") //зелёный
         {return 'green'}
     else if (value=="16711680") //красный
-        {return 'red'}
+        {return 'red-col'}
     else if (value=="16761035") //розовый
         {return 'pink'}
     else if (value=="8421504") //серый
