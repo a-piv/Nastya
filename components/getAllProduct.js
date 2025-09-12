@@ -42,8 +42,10 @@ console.log(link.mainLink)
             // Проверяем есть ли в нашем списке такой мазаин, выдеяем его красным и меняем название
             let supplier = productsSupplierRed(products.supplier, li)
             // console.log(supplier)
-                       
-            li.append(products.id, /*' ',products.name,*/ ' ',products.sizes[0].price.product/100, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (' , products.name, ')'  /*, ' (', products.time1,' ', products.time2,')', */)
+            // Делаем чтобы цена была с пробелом 
+            let price = products.sizes[0].price.product/100
+            let priceProbel = price.toLocaleString()
+            li.append(products.id, /*' ',products.name,*/ ' ',priceProbel, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', ' (' , products.name, ')'  /*, ' (', products.time1,' ', products.time2,')', */)
             
             // Выделяем свои магазины Которые есть в списке
                 // if(productsSupplierRed(products.supplier, li)){li.classList.add('.red')}
