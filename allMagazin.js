@@ -27,7 +27,7 @@ const allMagazin=[
 {name: 'Mobile.store', reduction: 'П'},
 {name: 'Mobile Premium', reduction: 'ДАВ'},
 {name: 'Надежные смартфоны', reduction: 'ВАС'},
-{name: 'Smart Market', reduction: 'ЭД'},
+{name: 'Smartmarket', reduction: 'ЭД'},
 {name: 'Best Smartphone', reduction: 'Л'},
 {name: 'Новые решения', reduction: 'М'},
 {name: 'Мобильный Мир', reduction: 'Р'},
