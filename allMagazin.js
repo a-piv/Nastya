@@ -46,7 +46,10 @@ const allMagazin=[
 {name: 'Mibile Leones', reduction: 'ФИИ'},
 {name: 'Citywide iPhones', reduction: 'СРА'},
 {name: 'Gadget Hub', reduction: 'ЭД'},
-{name: 'Smart on Track', reduction: 'ПИА'}
-
+{name: 'Smart on Track', reduction: 'ПИА'},
+{name: 'Smart on Track', reduction: 'ПИА'},
+{name: 'Mystic mart', reduction: 'МНА'},
+{name: 'Новая техника!', reduction: 'ОНН'},
+{name: 'PhoneKing', reduction: 'ККМ'}
 
 ]
