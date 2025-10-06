@@ -34,6 +34,7 @@ console.log(link.mainLink)
             console.log('Создал таблицу');
             console.log(json.products);
             console.log(json.total);
+            // console.log(json.total);
             document.querySelector('.generalInfo').textContent=(`Всего товаров: ${json.total} шт.`)
             
             json.products.forEach(products=>{ 
@@ -45,7 +46,7 @@ console.log(link.mainLink)
             // Делаем чтобы цена была с пробелом 
             let price = products.sizes[0].price.product/100
             let priceProbel = price.toLocaleString()
-            li.append(/*products.id, ' ',products.name,*/ ' ',priceProbel, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', /*' (' , products.name, ')'  , ' (', products.time1,' ', products.time2,')', */)
+            li.append(products.id, /*' ',products.name,*/ ' ',priceProbel, ' ',/*products.supplier,*/ supplier, ' ',products.supplierRating, ' /',dayDelivery(products.time1, products.time2),'д', /*' (' , products.name, ')'  , ' (', products.time1,' ', products.time2,')', */)
             
             // Выделяем свои магазины Которые есть в списке
                 // if(productsSupplierRed(products.supplier, li)){li.classList.add('.red')}

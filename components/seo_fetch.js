@@ -5,7 +5,8 @@ let allProd ={};
 
 // Запрос, без страницы и поискового запроса. Страница: &page=2, Запрос: &query=Брелокии%20для%20ключей
 // let searchURLrequest ="https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&query=%D0%B0%D0%B9%D1%84%D0%BE%D0%BD+13+128&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQIDAAoEAAMBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMy7zN3NTMwAC5mAUweL-kA"
-let searchURLrequest ="https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQIDAAoEAAMBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMy7zN3NTMwAC5mAUweL-kA"
+let searchURLrequest ="https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQIDAAoEAAMBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMy7zN3NTMwAC5mAUweL-kA"
+
 //let searchURLrequestOLD ='https://search.wb.ru/exactmatch/ru/common/v4/search?TestGroup=main_page_delete_purch&TestID=204&appType=1&curr=rub&dest=-446117&regions=80,38,83,4,64,33,68,70,30,40,86,75,69,22,1,31,66,110,48,71,114&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1'
 
 
@@ -42,7 +43,7 @@ function getSearchQuery() {
   // let searchRequestSplit = searchRequestValue.split(" ");
   let searchQuery = searchRequestValue.replace(/ /g, '%20');
   console.log(`Поисковой запрос: ${searchQuery}`);
-  searchURLrequest = `${searchURLrequest}&query=${searchQuery}&page=1`
+  // searchURLrequest = `${searchURLrequest}&query=${searchQuery}&page=1`
   return searchQuery;
 }
 
@@ -63,6 +64,7 @@ return urlSeo;
 // Получаем все id-товаров из массива данных
 function getAllProdukts(){
 fetch(urlSeo)
+console.log(urlSeo)
   .then(response => response.json())
   .then(response_products => {
     supplierNEW = response_products.products.forEach((products)=>{console.log(products.supplier)});

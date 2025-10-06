@@ -1,30 +1,10 @@
-//https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2016%20256&resultset=filters&spp=30&suppressSpellcheck=false
-
-// const { createElement } = require("react");
-
-// const { createElement } = require("react");
-// создаём форму
-
-
+// создаём меню с фильтром (для поискового запроса). Работает.
 function createForm(className){
     let searchClass = document.querySelector(className)
-    // очищаем форму и общее кол-во товаров
-    // if(document.querySelector('#idFormSearch')){
-    //     document.querySelector('#idFormSearch').textContent=""
-    //     document.querySelector('.generalInfo').remove()
-    //     // document.querySelector('.buttonGetList').remove()
-    // }
     let form = document.createElement('form')
     form.setAttribute('id', 'idFormSearch'); 
     form.classList.add('formSearchFilter')
-    // form.setAttribute('method', 'GET'); 
-    // form.setAttribute('action','https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&page=1')
-    // &autoselectFilters=false 
-
     searchClass.append(form)
-    
-    // createButtonGetProducts(form)
-
 }
 
 
@@ -77,6 +57,7 @@ function createFormElements(element){
                                     let createInput = document.createElement('select')
                                     createInput.setAttribute('rus', element.name);
                                     createInput.name = element.key
+                                    // console.log(createInput.name)
                                     createInput.id = element.key
                                     let frm = createInput.id
                                     
@@ -132,6 +113,7 @@ function createFormElements(element){
                                     formFilter.append(createLable)
          }
     }   
+    console.log('Работает после нажатия на получить')
 }
 
 // Функция создаёт общую информацию в конце формы (main) и создаём див для всех товаров
@@ -150,7 +132,8 @@ function createDataGeneralInfo(textName, name, textmeaning, meaning){
 function colorMainMenu(event){
         // если модель, память или цвет, добавляем класс
         console.log('Цвет меню добавлен')
-    if(event.target.name == fcolor){
+    if(event.target.name == f14177449){
+        // было fcolor
         // event.target.classList.add('classColor')
         return(classColor)
     }else if(event.target.name == f4424){
@@ -167,6 +150,8 @@ function colorMainMenu(event){
 
 function functionTest(event){
     console.log("Кнопка выбора работает")
+    nd = `${event.target.name}=${event.target.value}`
+    selectedFilter(nd)
     // console.log(event.target.name)
     // console.log(event.target.classList)
     event.target.classList=''
@@ -191,32 +176,60 @@ function functionTest(event){
     buttonOn('.buttonGetList')
 }
 
-// Для цветов телефона
+// Классы Для цветов телефона
 function colorBG(value){
-    console.log(value)
-    if (value=="16119260") //бежевый
+    // console.log(value)
+    if (value=="20214644") //бежевый НЕ ИЗМЕНИЛ
         {return 'beige'}
-    else if (value=="16777215") //белый
+        else if (value=="12065905") //белый
         {return 'white'}
-    else if (value=="11393254") //голубой
+        else if (value=="20214449") //голубой
         {return 'azure'}
-    else if (value=="16776960") //желтый
+        else if (value=="14185777") //желтый
         {return 'yellow'}
-    else if (value=="32768") //зелёный
+        else if (value=="14835931") //зелёный
         {return 'green'}
-    else if (value=="16711680") //красный
+        else if (value=="11807341") //красный
         {return 'red-col'}
-    else if (value=="16761035") //розовый
+        else if (value=="11807342") //розовый
         {return 'pink'}
-    else if (value=="8421504") //серый
+        else if (value=="20214430") //серый
         {return 'gray'}
-    else if (value=="255") //синий
+        else if (value=="20214646") //синий
         {return 'blue'}
-    else if (value=="15631086") //фиолетовый
+        else if (value=="14185662") //фиолетовый
         {return 'violet'}
-    else if (value=="0") //фиолетовый
+        else if (value=="20214658") //коричневый
+        {return 'brown'}
+        else if (value=="20214770") //оранжевый
+        {return 'orange'}
+        else if (value=="13600062") //фиолетовый
         {return 'black'}
     else 
+//    Было
+    // if (value=="16119260") //бежевый
+    //     {return 'beige'}
+    // else if (value=="16777215") //белый
+    //     {return 'white'}
+    // else if (value=="11393254") //голубой
+    //     {return 'azure'}
+    // else if (value=="16776960") //желтый
+    //     {return 'yellow'}
+    // else if (value=="32768") //зелёный
+    //     {return 'green'}
+    // else if (value=="16711680") //красный
+    //     {return 'red-col'}
+    // else if (value=="16761035") //розовый
+    //     {return 'pink'}
+    // else if (value=="8421504") //серый
+    //     {return 'gray'}
+    // else if (value=="255") //синий
+    //     {return 'blue'}
+    // else if (value=="15631086") //фиолетовый
+    //     {return 'violet'}
+    // else if (value=="0") //фиолетовый
+    //     {return 'black'}
+    // else 
         {return 'other'}
 }
 
@@ -224,7 +237,8 @@ function colorBG(value){
 function classColorMainSelect(value){
     // Цвет
     // console.log(value)
-    if (value == 'fcolor'){
+    if (value == 'f14177449'){
+        // был параметр fcolor
         return 'border-fcolor'
      }
     // Модель
