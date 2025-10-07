@@ -29,7 +29,7 @@ fetch(filterURLrequest)
 // Функция достаёт введённый поисковой запрос для параметра filterURLrequest_4
 function getSearchQuery1() {
   let searchRequestValue = document.querySelector('#SearchQuery').value;
-    // let searchQuery = searchRequestValue.replace(/ /g, '%20');
+    // Ниже строка кодирует в данные для ссылкпи let searchQuery = searchRequestValue.replace(/ /g, '%20'), decodeURIComponent() делает нормальные пробелы, убирает раскодировку
     let searchQuery = encodeURIComponent(searchRequestValue)
   console.log(`Поисковой запрос: ${searchQuery}`);
   let query = `&query=${searchQuery}`
