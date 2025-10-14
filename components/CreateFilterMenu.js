@@ -9,7 +9,7 @@ function createForm(className){
 
 
     // Создаём кнопку "Получить товары"
-    function createButtonGetProducts(form){
+    function createButtonGetProducts(){
         let buttonSendForm = document.createElement('button')
         buttonSendForm.classList.add('buttonGetList')
         buttonSendForm.textContent = "Получить товары"
@@ -21,8 +21,9 @@ function createForm(className){
         buttonSendForm.addEventListener('click', (event) => {
         event.preventDefault()
         //   функция создаёт ссылку для парсинга товаров
-        let form = document.querySelector('#idFormSearch')
-        let linkAllproducts = serializeForm(form)
+        // let form = 
+        
+        let linkAllproducts = link_Search()
         console.log(linkAllproducts)
         
         // Создаём див для списка товаров
@@ -150,8 +151,8 @@ function colorMainMenu(event){
 
 function functionTest(event){
     console.log("Кнопка выбора работает")
-    nd = `${event.target.name}=${event.target.value}`
-    selectedFilter(nd)
+    // nd = `${event.target.name}=${event.target.value}`
+    selectedFilter(selectedMenuSelected)
     // console.log(event.target.name)
     // console.log(event.target.classList)
     event.target.classList=''

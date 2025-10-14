@@ -1,4 +1,5 @@
 function getAllproducts(link){
+
     // let ulList = document.querySelector('ulList')
     let div = document.querySelector('.products')
     div.textContent=""
@@ -7,7 +8,7 @@ function getAllproducts(link){
     div.append(list)
     // list.removeChild(li);
 
-console.log(link.mainLink)
+console.log(link)
 
     // const buttonGetPosition = document.querySelector("#send_zap");
 
@@ -27,7 +28,7 @@ console.log(link.mainLink)
 // }
 
 
-        let promise = fetch(link.mainLink)
+        fetch(link)
         .then(response => response.json())
         .then(json => {
         

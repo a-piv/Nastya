@@ -1,23 +1,36 @@
-function selectedFilter(selectedForm){
-console.log(selectedForm);
+// selectedMenu в функцию вставляем selectedMenu
+function selectedFilter(){
 
-let filterURLrequest_1 = 'https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=no_action&ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
-let filterURLrequest_2 = `&${selectedForm}` //выбранные поля типа &f14177449=12065905;
-let filterURLrequest_3 = '&inheritFilters=false&lang=ru';
+    // здесь получаем выбранные менюшки
+let linkAllproducts = serializeForm(document.querySelector('#idFormSearch'))
+console.log(linkAllproducts.linnkk)
+
+let linkAllproductsMenu = link_Search()
+console.log(linkAllproductsMenu)
+
+console.log('--------------------------');
+
+let filterURLrequest_1 = 'https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=psm&ab_testid=psm&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
+let filterURLrequest_2 = `&${linkAllproducts.linnkk}` //выбранные поля типа &f14177449=12065905;
+let filterURLrequest_3 = '&hide_dtype=11&inheritFilters=false&lang=ru';
 let filterURLrequest_4 = getSearchQuery1(); //поисковой запрос типа &query=айфон%2013%20128;
 let filterURLrequest_5 =  '&resultset=filters&spp=30&suppressSpellcheck=false';
 let filterURLrequest = filterURLrequest_1 + filterURLrequest_2 + filterURLrequest_3 + filterURLrequest_4 + filterURLrequest_5;
 
+console.log(filterURLrequest)
 // отравляем запрос на получение данных выбранного фильтра
 fetch(filterURLrequest)
-// console.log(filterURLrequest)
   .then(response => response.json())
   .then(responseForm => {
-    console.log(filterURLrequest)
+    console.log(responseForm)
     let formMetadata = responseForm.data.total
+    console.log(formMetadata)
     
     pageInsertInfo(formMetadata)
     // formMetadata.forEach((metadata)=>{console.log(metadata)});
+    let linkAllproducts = link_Search()
+    getAllproducts(linkAllproducts)
+    
   }
     )
 
@@ -39,5 +52,5 @@ function getSearchQuery1() {
 
 // Функция пишет на странице сколько товаров найдено по фильтру
 function pageInsertInfo(totalProductFilter){
-    document.querySelector('.generalInfo').textContent=(`Всего товаров в выбранном фильтре: ${totalProductFilter} шт.`)
+    document.querySelector('.generalInfoFilter').textContent=(`Всего товаров в выбранном фильтре: ${totalProductFilter} шт.`)
 }
