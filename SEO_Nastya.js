@@ -1,3 +1,4 @@
+// Запрос на получение фильтра товаров.
 let SearchQueryValue =''
 let buttonGetFilter = document.querySelector('#getFilterWB');
 buttonGetFilter.addEventListener('click', (event) => {
@@ -13,7 +14,8 @@ buttonGetFilter.addEventListener('click', (event) => {
     console.log(SearchQueryValue)
     // Деаем ссыку на запрос
     // https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=айфон%2013%20256&resultset=filters&spp=30&suppressSpellcheck=false
-    let linkFilterWB = `https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
+    let linkFilterWB = `
+https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?ab_testing=false&ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786&hide_dtype=11&inheritFilters=false&lang=ru&query=${SearchQueryValue}&resultset=filters&spp=30&suppressSpellcheck=false`
     // console.log(linkFilterWB);
     menuFilter(linkFilterWB)
         
@@ -23,11 +25,16 @@ buttonGetFilter.addEventListener('click', (event) => {
     function menuFilter(linkMenu){
     // создаю форму, кладу её в класс .products, запускаю парсинг фильтра в класс формы
     createForm('.mainTable')
-    fetch(linkMenu)
+    console.log(linkMenu)
+    fetch(linkMenu, {
+  
+  referrerPolicy: "no-referrer-when-downgrade" // Referer: https://javascript.info
+})
     .then(response => response.json())
     .then(commits => 
         {  
-
+console.log(commits)
+console.log(commits.total)
             createDataGeneralInfo('Категория: ', commits.metadata.context, ' Всего товаров:  ', commits.data.total)
             createButtonGetProducts('.mainTable')
             commits.data.filters.forEach((elem)=>{

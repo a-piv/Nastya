@@ -1,11 +1,11 @@
 // Получаем поисковю ссылку для всех товаров по поиску и фильтру. Работает
 // https://doka.guide/js/deal-with-forms/
-// Было'https://search.wb.ru/exactmatch/ru/common/v18/search?ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
-let linkWBAction1 = 'https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=psm&ab_testid=psm&appType=1&curr=rub&dest=-1257786'
+// Было'https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=psm&ab_testid=psm&appType=1&curr=rub&dest=-1257786'
+let linkWBAction1 = 'https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?ab_testing=false&ab_testing=false&appType=1&curr=rub&dest=-1257786'
 let linkWBAction2 = '&hide_dtype=11&inheritFilters=false&lang=ru&page=1'
 let selectedMenuSelected = '' //выбранные фильтры. поисковой запрос queryAll
 let linkWBAction3= `&resultset=catalog&sort=priceup&spp=30&suppressSpellcheck=false`
-
+console.log('Рабоатет getLinkParse')
 // Функця создаёт форму фильтра
 
 // Сделать класс, который возвращает все выбранные в меню позиции и общую ссылку на поисковой запрос. Пока выбранные элементы вывел в переменную selectedMenu

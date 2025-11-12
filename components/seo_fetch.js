@@ -1,11 +1,11 @@
 const buttonGetPosition = document.querySelector(".buttonGetPosition");
 const buttonOpenSiteWB = document.querySelector(".buttonOpenSiteWB");
 let allProd ={};
+// Былоlet searchURLrequest ="https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQIDAAoEAAMBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMy7zN3NTMwAC5mAUweL-kA"
 let searchURLrequest ="https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=new_optim&appType=64&curr=rub&dest=-446117&inheritFilters=false&lang=ru&page=1&resultset=catalog&sort=popular&spp=30&suppressSpellcheck=false&uclusters=1&uiv=0&uv=AQUAAQIDAAoEAAMBAAICAAEACcRUOiLDlEPevuBEfEYHvjI_yb_dP6BBZ0U9Qdc6fEUOxm--zz-mvxXATCpXxVXEbjydOA5AwcmLPmPHMUDuvoOvfbmwwIK0pzEUSGQzLUBtOoBGI0Kex-zGXrgyRTNCZ8oVOIhEHMPhQdVA9cWmO7XFt0PgSSK-fMnUweDAMEEDPYk-S8JDP-tD_8NcLQ84TsRyPlvH8safQARBHURDP77GT8AXRR9GQMgQyXDBJ0OkQtNI0MHjRns948V4xu81OUiCPdTEHb_9vM9JBb_vxUFJX7fwxG3FS75MQsS7m0WWR0hCczM7OCo_1LmKQRY_esOrQIk8Mkh4wZTASkg1xAMy7zN3NTMwAC5mAUweL-kA"
-
 let searchQuery = '';
 let urlSeo = '';
-
+console.log('Работает seo_fatch')
 // Ссылка на фильтр в категории: https://catalog.wb.ru/catalog/wedding/v4/filters?appType=1&cat=10320&curr=rub&dest=-446117&regions=80,38,83,4,64,33,68,70,30,40,86,75,69,1,31,66,22,110,48,71,114&spp=25&uclusters=1
 // Это ссылка на КАТАЛОГ "https://catalog.wb.ru/catalog/bijouterie2/catalog?appType=1&curr=rub&dest=-446117&regions=80,38,83,4,64,33,68,70,30,40,86,75,69,22,1,31,66,110,48,71,114&sort=popular&spp=30&subject=297&uclusters=1&page=2";
 // Это ссылка на РЕКЛАМУ В КАТАЛОГЕ (menuid можено менять, брать из апи рекаламы)  https://catalog-ads.wildberries.ru/api/v6/catalog?menuid=130486

@@ -10,7 +10,7 @@ console.log(linkAllproductsMenu)
 
 console.log('--------------------------');
 
-let filterURLrequest_1 = 'https://u-search.wb.ru/exactmatch/ru/common/v18/search?ab_testid=psm&ab_testid=psm&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
+let filterURLrequest_1 = 'https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?ab_testing=false&ab_testing=false&appType=1&autoselectFilters=false&curr=rub&dest=-1257786'
 let filterURLrequest_2 = `&${linkAllproducts.linnkk}` //выбранные поля типа &f14177449=12065905;
 let filterURLrequest_3 = '&hide_dtype=11&inheritFilters=false&lang=ru';
 let filterURLrequest_4 = getSearchQuery1(); //поисковой запрос типа &query=айфон%2013%20128;
