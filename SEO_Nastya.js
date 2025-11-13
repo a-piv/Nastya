@@ -35,8 +35,12 @@ https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?a
         {  
 console.log(commits)
 console.log(commits.total)
+            // Удаляем данные из формы
+            deliteList()
+            console.log("Работает при нажатии кнопки")
             createDataGeneralInfo('Категория: ', commits.metadata.context, ' Всего товаров:  ', commits.data.total)
             createButtonGetProducts('.mainTable')
+           
             commits.data.filters.forEach((elem)=>{
                 createFormElements(elem)
             })
@@ -66,3 +70,6 @@ function productsSupplierRed(supplierName, li){
     }
     return (magaz);
 }
+
+
+

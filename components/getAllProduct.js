@@ -1,14 +1,29 @@
+// Функция очищает список с товарами
+function deliteList(){
+let productsTable = document.querySelector('.products')
+    productsTable.textContent=""
+
+    let generalInfo = document.querySelector('.generalInfo') 
+    if (generalInfo) {generalInfo.textContent=""}
+// generalInfo.textContent=""
+    let generalInfoFilter = document.querySelector('.generalInfoFilter') 
+    if (generalInfoFilter) {generalInfoFilter.textContent=""}
+}
+
+
 function getAllproducts(link){
 
     // let ulList = document.querySelector('ulList')
-    let div = document.querySelector('.products')
-    div.textContent=""
+    deliteList()
+    div = document.querySelector('.products')
     let list = document.createElement('ol')
     list.classList.add('ulList')
     div.append(list)
     // list.removeChild(li);
 
-console.log(link)
+
+
+
 
     // const buttonGetPosition = document.querySelector("#send_zap");
 

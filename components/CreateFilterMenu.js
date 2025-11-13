@@ -40,7 +40,6 @@ function createForm(className){
 
 // Функция создаёт список фильтров
 function createFormElements(element){
-    // console.log(element)
     // вставляем в див с классом classMenu
     // let classform = document.querySelector('.mainTable')
 
@@ -151,6 +150,11 @@ function colorMainMenu(event){
 
 function functionTest(event){
     console.log("Кнопка выбора работает")
+    // Удаляем кнопку "Получить товары"
+    buttonOff('.buttonGetList')
+    // let buttonGetProducts = document.querySelector('.buttonGetList')
+    // if (buttonGetProducts){buttonGetProducts.remove()}
+
     // nd = `${event.target.name}=${event.target.value}`
     selectedFilter(selectedMenuSelected)
     // console.log(event.target.name)
@@ -174,7 +178,7 @@ function functionTest(event){
         let color = colorBG(value)
         event.target.classList.add(color)
     }
-    buttonOn('.buttonGetList')
+    // buttonOn('.buttonGetList')
 }
 
 // Классы Для цветов телефона
@@ -263,3 +267,4 @@ function buttonOff(btnClass){
 function buttonOn(btnClass){
  document.querySelector(btnClass).disabled = false;
 }
+
