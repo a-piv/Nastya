@@ -50,6 +50,7 @@ const allMagazin=[
 {name: 'Smart on Track', reduction: 'ПИА'},
 {name: 'Mystic mart', reduction: 'МНА'},
 {name: 'Новая техника!', reduction: 'ОНН'},
-{name: 'PhoneKing', reduction: 'ККМ'}
+{name: 'PhoneKing', reduction: 'ККМ'},
+{name: 'NATURAL TECHNIQUE SMARTPHONES', reduction: 'Дубай'}
 
 ]
